@@ -1,5 +1,3 @@
-//Calculando Densidade Populacional e PIB per Capita
-
 #include <stdio.h>
 
 int main(){
@@ -11,6 +9,7 @@ int main(){
     float pib1, pib2;
     int pontosturisticos1, pontosturisticos2;
     float dens_popul1, dens_popul2;
+    float pibPerCapita1, pibPerCapita2;
 
     
 //  Inclusão de dados da carta1
@@ -34,6 +33,12 @@ int main(){
     printf("Informe o número de pontos turísticos (A quantidade de pontos turísticos na cidade): ");
     scanf("%d", &pontosturisticos1);
 
+// Calcular a Densidade Populacional: Divida a população da cidade pela sua área
+    dens_popul1 = (float) (populacao1/area1);
+
+// Calcular o PIB per Capita: Divida o PIB da cidade pela sua população
+    pibPerCapita1 = (float) ((pib1*1000000000)/populacao1);
+
 //  Informações da carta1
     printf("\n");
     printf("Carta %d:\n", carta1);
@@ -44,6 +49,8 @@ int main(){
     printf("Área: %.2f km²\n", area1);
     printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Números de Pontos Turísticos: %d\n", pontosturisticos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", dens_popul1);
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita1);
 
 
 //  Inclusão de dados da carta2
@@ -67,6 +74,12 @@ int main(){
     printf("Informe o número de pontos turísticos (A quantidade de pontos turísticos na cidade): ");
     scanf("%d", &pontosturisticos2);
 
+// Calcular a Densidade Populacional: Divida a população da cidade pela sua área
+    dens_popul2 = (float) (populacao2/area2);    
+
+// Calcular o PIB per Capita: Divida o PIB da cidade pela sua população
+    pibPerCapita2 = (float) ((pib2*1000000000)/populacao2);
+
 //  Informações da carta2    
     printf("\n");
     printf("Carta %d:\n", carta2);
@@ -77,6 +90,8 @@ int main(){
     printf("Área: %.2f km²\n", area2);
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Números de Pontos Turísticos: %d\n", pontosturisticos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", dens_popul2);    
+    printf("PIB per Capita: %.2f reais\n", pibPerCapita2);
 
     return 0;
 
