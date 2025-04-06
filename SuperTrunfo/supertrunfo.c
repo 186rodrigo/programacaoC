@@ -3,7 +3,7 @@
 int main(){
     int carta1=1, carta2=2;
     char estado1, estado2;
-    char cidade1[50], cidade2[50];
+    char cidade1[100], cidade2[100];
     int populacao1, populacao2;
     float area1, area2;
     float pib1, pib2;
@@ -15,9 +15,10 @@ int main(){
     printf("Carta:%d\n", carta1);
     printf("O Estado dever ser preenchido com uma letra de 'A' a 'H' (representando um dos oito estados)\nEstado: ");
     scanf("%c", &estado1);
+    getchar();
 
     printf("Nome da Cidade: ");
-    scanf("%s", cidade1);
+    scanf("%99[^\n]", cidade1);
 
     printf("Informe o número de abitantes da Cidade: ");
     scanf("%d", &populacao1);
@@ -33,7 +34,7 @@ int main(){
 
 //  Informações da carta1
     printf("\n");
-    printf("Carta %d:\n", carta1);
+    printf("Carta: %d\n", carta1);
     printf("Estado: %c\n", estado1);
     printf("Código: %c%02d\n", estado1, carta1);
     printf("Nome da Cidade: %s\n", cidade1);
@@ -48,9 +49,10 @@ int main(){
     printf("Carta:%d\n", carta2);
     printf("O Estado dever ser preenchido com uma letra de 'A' a 'H' (representando um dos oito estados)\nEstado: ");
     scanf(" %c", &estado2);
+    getchar();
 
     printf("Nome da Cidade: ");
-    scanf("%s", cidade2);
+    scanf("%99[^\n]", cidade2);
 
     printf("Informe o número de abitantes da Cidade: ");
     scanf("%d", &populacao2);
@@ -66,7 +68,7 @@ int main(){
 
 //  Informações da carta2    
     printf("\n");
-    printf("Carta %d:\n", carta2);
+    printf("Carta: %d\n", carta2);
     printf("Estado: %c\n", estado2);
     printf("Código: %c%02d\n", estado2, carta2);
     printf("Nome da Cidade: %s\n", cidade2);
@@ -75,6 +77,17 @@ int main(){
     printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Números de Pontos Turísticos: %d\n", pontosturisticos2);
 
-    return 0;
+    printf("\n");
+    printf("Comparação das Cartas (Atributo: População):\n");
+    printf("Carta %d - %s: %d\n", carta1, cidade1, populacao1);
+    printf("Carta %d - %s: %d\n", carta2, cidade2, populacao2);
+    
+    if (populacao1 > populacao2) {
+        printf("Resultado: Carta %d (%s) venceu!\n", carta1, cidade1);
+    } else {
+        printf("Resultado: Carta %d (%s) venceu!\n", carta2, cidade2);
+    }
+
+return 0;
 
 }
